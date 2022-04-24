@@ -1,0 +1,13 @@
+cat << EOF > /root/jenkins.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkinspod
+  labels:
+    app: jenkinsapp
+    type: frontend
+spec:
+  containers:
+    - name: jenkins
+image: jenkins/jenkins:lts
+EOF
