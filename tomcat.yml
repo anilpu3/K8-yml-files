@@ -8,6 +8,6 @@ metadata:
     type: frontend
 spec:
   containers:
-    - name: tomcat
+    - name: tomcata
 image: anilpu3/cicd-build-docker-repo:95
 EOF
