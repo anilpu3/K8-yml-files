@@ -1,0 +1,13 @@
+cat << EOF > /root/tomcat-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcatservice
+spec:
+  selector:
+    app: tomcatapp # names s defined in the pod
+  ports:
+    - protocol: TCP
+port: 6666
+targetPort: 8080
+EOF
