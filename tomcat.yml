@@ -1,0 +1,13 @@
+cat << EOF > /root/tomcat.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcatpod
+  labels:
+    app: tomcatapp
+    type: frontend
+spec:
+  containers:
+    - name: tomcat
+image: anilpu3/cicd-build-docker-repo:95
+EOF
