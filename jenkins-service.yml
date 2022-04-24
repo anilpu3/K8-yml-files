@@ -1,0 +1,13 @@
+cat << EOF > /root/jenkins-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-service
+spec:
+  selector:
+    app: jenkinsapp
+  ports:
+    - protocol: TCP
+port: 8090
+targetPort: 8080
+EOF
