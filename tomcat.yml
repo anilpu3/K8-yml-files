@@ -9,5 +9,5 @@ metadata:
 spec:
   containers:
     - name: tomcat
-image: anilpu3/cicd-build-docker-repo:95
+      image: anilpu3/cicd-build-docker-repo:95
 EOF
