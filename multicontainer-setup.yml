@@ -1,0 +1,23 @@
+cat << EOF > /root/multicontainer-setup.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcatservice
+spec:
+  selector:
+    app: tomcatapp
+  ports:
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multiple-containers
+  labels:
+    app: jenkinstomcat
+    type: frontend
+spec:
+  containers:
+    - name: jenkins
+image: jenkins/jenkins:lts
+    - name: tomcat
+image: anilpu3/cicd-build-docker-repo:95
+EOF
