@@ -1,0 +1,14 @@
+cat << EOF > /root/jenkins-nodeport-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-node-pod-service
+spec:
+  type: NodePort
+  selector:
+    app: jenkinsapp
+  ports:
+    - protocol: TCP
+nodePort: 30003
+port: 8090
+targetPort: 8080
