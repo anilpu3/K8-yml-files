@@ -13,7 +13,7 @@ spec:
   template: 
     metadata: 
       labels: 
-        app: tomcata
+        app: tomcat
     spec: 
       containers: 
         - image: anilpu3/cicd-build-docker-repo:95
