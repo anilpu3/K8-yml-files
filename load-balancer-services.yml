@@ -1,0 +1,14 @@
+cat << EOF > /root/load-balancer-services.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-load-balancer
+spec:
+  selector:
+    app: tomcat
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+port: 8080
+targetPort: 30003 #nodeport port (load balancer routes traffic to node port) 
+EOF
