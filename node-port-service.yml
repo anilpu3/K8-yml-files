@@ -1,0 +1,15 @@
+cat << EOF > /root/node-port-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-nodeport
+spec:
+  selector:
+    app: tomcat
+  type: NodePort
+  ports:
+    - protocol: TCP
+port: 8080
+nodePort: 30003
+targetPort: 8080
+EOF
