@@ -9,6 +9,6 @@ spec:
   type: LoadBalancer
   ports:
     - protocol: TCP
-        port: 80
-        targetPort: 30003 #nodeport port (load balancer routes traffic to node port) 
+      port: 80
+      targetPort: 30003 #nodeport port (load balancer routes traffic to node port) 
 EOF
