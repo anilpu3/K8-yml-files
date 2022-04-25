@@ -1,0 +1,17 @@
+cat << EOF > /root/external-ip.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-external-ip
+spec:
+  selector:
+    app: tomcat
+
+  ports:
+    - protocol: TCP
+      port: 8080
+      nodePort: 30003
+      targetPort: 8080
+  externalIPs: 
+    - 10.0.0.195 # internal ip (ec2 private ip of workernode)
+EOF
