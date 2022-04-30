@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemon
+spec: 
+  selector:
+    matchLabels: 
+      app: tomcat-replica
+  template: 
+    metadata:
+      name: tomcat-single-container       
+      labels:
+        app: tomcat-replica
+    spec: 
+      containers: 
+        - name: tomcat
+          image: anilpu3/cicd-build-docker-repo:95

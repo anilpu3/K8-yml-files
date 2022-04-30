@@ -1,0 +1,41 @@
+apiVersion: v1
+kind : Pod
+metadata:
+  name: tomcat-replica
+  labels:
+    type: frontend        
+    app: tomcatapps
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: NotIn
+              values:
+                - seju
+          topologyKey: kubernetes.io/hostname        
+  containers:
+    - name: tomcat
+      image: anilpu3/cicd-build-docker-repo:1.0       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

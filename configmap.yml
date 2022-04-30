@@ -1,0 +1,49 @@
+# deployment via rollin updates
+apiVersion: apps/v1
+kind : Deployment
+metadata:
+  name: tomcat-replica
+spec: 
+  replicas: 6
+  strategy:
+    type: RollingUpdate      
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 0
+  selector: 
+    matchLabels: 
+      app: tomcatapps
+  template:
+    metadata:      
+      name: tomcat-deployment
+      labels:
+        app: tomcatapps
+    spec:
+      containers:
+        - name: tomcat
+          image: anilpu3/cicd-build-docker-repo:1.0       
+          volumeMounts:
+            - name: volume
+              mountPath: /usr/local/tomcat/webapps
+      volumes:
+        - name: volume        
+          configMap: 
+            name: marvel    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
