@@ -9,6 +9,7 @@ spec:
     app: jenkinsapp
   ports:
     - protocol: TCP
-nodePort: 30003
-port: 8090
-targetPort: 8080
+      nodePort: 30003
+      port: 8090
+      targetPort: 8080
+EOF      
